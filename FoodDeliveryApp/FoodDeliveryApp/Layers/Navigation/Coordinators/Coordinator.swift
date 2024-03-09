@@ -57,3 +57,44 @@ extension CoordinatorProtocol {
         }
     }
 }
+
+// MARK: - TabBar Coordinator
+
+protocol TabBarCoordinatorProtocol: CoordinatorProtocol {
+    var tabBarController: UITabBarController? { get set }
+}
+
+// MARK: - Coordinator Default Implementation
+
+class Coordinator: CoordinatorProtocol {
+    var type: CoordinatorType
+    var childCoordinators: [CoordinatorProtocol]
+    var navigationController: UINavigationController?
+    var finishDelegate: CoordinatorFinishDelegate?
+
+    init(
+        type: CoordinatorType,
+        childCoordinators: [CoordinatorProtocol] = [CoordinatorProtocol](),
+        navigationController: UINavigationController? = nil,
+        finishDelegate: CoordinatorFinishDelegate? = nil
+    ) {
+        self.type = type
+        self.childCoordinators = childCoordinators
+        self.navigationController = navigationController
+        self.finishDelegate = finishDelegate
+    }
+
+    deinit {
+        print("Coordinator Deinit: \(type)")
+        childCoordinators.forEach { $0.finishDelegate = nil }
+        childCoordinators.removeAll()
+    }
+
+    func start() {
+        print("Coordinator Start")
+    }
+
+    func finish() {
+        print("Coordinator Finish")
+    }
+}
