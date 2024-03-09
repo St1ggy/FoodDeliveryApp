@@ -31,6 +31,7 @@
 		48ACF3202B9BCACC0073BEEE /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF31F2B9BCACC0073BEEE /* UIFont+Extension.swift */; };
 		48ACF3222B9C7B910073BEEE /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF3212B9C7B910073BEEE /* UIColor+Extension.swift */; };
 		48ACF3242B9C7C340073BEEE /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF3232B9C7C340073BEEE /* AppColors.swift */; };
+		48ACF32C2B9C9E090073BEEE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF32B2B9C9E090073BEEE /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		48ACF31F2B9BCACC0073BEEE /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		48ACF3212B9C7B910073BEEE /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		48ACF3232B9C7C340073BEEE /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		48ACF32B2B9C9E090073BEEE /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 		487475052B9B60140062BE17 /* FoodDeliveryApp */ = {
 			isa = PBXGroup;
 			children = (
+				48ACF3262B9C9DE30073BEEE /* Layers */,
 				48ACF3012B9BC8AC0073BEEE /* Resources */,
 				48ACF2FE2B9BC7580073BEEE /* Extensions */,
 				487475062B9B60140062BE17 /* AppDelegate.swift */,
@@ -149,6 +152,38 @@
 				48ACF30F2B9BC8C80073BEEE /* Roboto-ThinItalic.ttf */,
 			);
 			path = Roboto;
+			sourceTree = "<group>";
+		};
+		48ACF3262B9C9DE30073BEEE /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				48ACF3272B9C9DE60073BEEE /* Navigation */,
+			);
+			path = Layers;
+			sourceTree = "<group>";
+		};
+		48ACF3272B9C9DE60073BEEE /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				48ACF32A2B9C9DF90073BEEE /* Coordinators */,
+				48ACF3292B9C9DF30073BEEE /* Controllers */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		48ACF3292B9C9DF30073BEEE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		48ACF32A2B9C9DF90073BEEE /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				48ACF32B2B9C9E090073BEEE /* Coordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48ACF32C2B9C9E090073BEEE /* Coordinator.swift in Sources */,
 				4874750B2B9B60140062BE17 /* ViewController.swift in Sources */,
 				487475072B9B60140062BE17 /* AppDelegate.swift in Sources */,
 				48ACF3002B9BC7680073BEEE /* UIViewController+Extension.swift in Sources */,
