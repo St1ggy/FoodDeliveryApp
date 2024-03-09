@@ -12,12 +12,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .systemRed
+        view.backgroundColor = AppColors.white
 
         let label = UILabel()
         label.text = "Hello World!"
-        label.font = .Roboto.blackItalic.size(of: 40)
+        label.font = .Roboto.italic.size(of: 20)
         label.textAlignment = .center
+        label.textColor = AppColors.accent
 
         addSubviews(label)
 
