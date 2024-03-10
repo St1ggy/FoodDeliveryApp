@@ -9,8 +9,7 @@ import UIKit
 
 class AppCoordinator: Coordinator {
     override func start() {
-//        showOnboardingFlow()
-        showMainFlow()
+        showOnboardingFlow()
     }
 
     override func finish() {
@@ -34,50 +33,58 @@ private extension AppCoordinator {
         onboardingCoordinator.start()
     }
 
+    func configCoordinator(
+        coordinator: Coordinator,
+        tabTitle: String,
+        imageName: String,
+        tag: Int
+    ) -> UINavigationController {
+        let navigationController = UINavigationController()
+        navigationController.tabBarItem = UITabBarItem(
+            title: tabTitle,
+            image: UIImage(systemName: imageName),
+            tag: tag
+        )
+
+        coordinator.navigationController = navigationController
+        coordinator.finishDelegate = self
+        coordinator.start()
+
+        addChildCoordinator(coordinator)
+
+        return navigationController
+    }
+
     func showMainFlow() {
         guard let navigationController = navigationController else { return }
 
-        let homeNavigationController = UINavigationController()
-        homeNavigationController.tabBarItem = UITabBarItem(
-            title: "Home",
-            image: UIImage(systemName: "house"),
+        let homeNavigationController = configCoordinator(
+            coordinator: HomeCoordinator(),
+            tabTitle: "Home",
+            imageName: "house",
             tag: 0
         )
-        let homeCoordinator = HomeCoordinator(navigationController: homeNavigationController)
-        homeCoordinator.finishDelegate = self
-        homeCoordinator.start()
 
-        let orderNavigationController = UINavigationController()
-        orderNavigationController.tabBarItem = UITabBarItem(
-            title: "Order",
-            image: UIImage(systemName: "swirl.circle.righthalf.filled"),
+        let orderNavigationController = configCoordinator(
+            coordinator: OrderCoordinator(),
+            tabTitle: "Order",
+            imageName: "cart",
             tag: 1
         )
-        let orderCoordinator = OrderCoordinator(navigationController: orderNavigationController)
-        orderCoordinator.finishDelegate = self
-        orderCoordinator.start()
 
-        let listNavigationController = UINavigationController()
-        listNavigationController.tabBarItem = UITabBarItem(
-            title: "List",
-            image: UIImage(systemName: "swirl.circle.righthalf.filled"),
+        let listNavigationController = configCoordinator(
+            coordinator: ListCoordinator(),
+            tabTitle: "List",
+            imageName: "list.dash",
             tag: 2
         )
-        let listCoordinator = ListCoordinator(navigationController: listNavigationController)
-        listCoordinator.finishDelegate = self
-        listCoordinator.start()
 
-        let profileNavigationController = UINavigationController()
-        profileNavigationController.tabBarItem = UITabBarItem(
-            title: "Profile",
-            image: UIImage(systemName: "swirl.circle.righthalf.filled"),
+        let profileNavigationController = configCoordinator(
+            coordinator: ProfileCoordinator(),
+            tabTitle: "Profile",
+            imageName: "person",
             tag: 3
         )
-        let profileCoordinator = ProfileCoordinator(navigationController: profileNavigationController)
-        profileCoordinator.finishDelegate = self
-        profileCoordinator.start()
-
-        addChildCoordinators(homeCoordinator, orderCoordinator, listCoordinator, profileCoordinator)
 
         let tabBarControllers = [
             homeNavigationController,
