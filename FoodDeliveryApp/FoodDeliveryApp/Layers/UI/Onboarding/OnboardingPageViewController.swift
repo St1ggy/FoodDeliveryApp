@@ -14,24 +14,21 @@ class OnboardingPageViewController: UIViewController {
     var image: UIImage?
     var titleText: String?
     var descriptionText: String?
-    var buttonText: String?
 
     // MARK: - Views
 
     private lazy var imageView = UIImageView()
     private lazy var titleLabel = UILabel()
     private lazy var descriptionLabel = UILabel()
-    private lazy var button = UIButton()
 
     // MARK: - Init
 
-    init(image: UIImage, titleText: String, descriptionText: String, buttonText: String) {
+    init(image: UIImage, titleText: String, descriptionText: String) {
         super.init(nibName: nil, bundle: nil)
 
         self.image = image
         self.titleText = titleText
         self.descriptionText = descriptionText
-        self.buttonText = buttonText
     }
 
     @available(*, unavailable)
@@ -56,7 +53,6 @@ private extension OnboardingPageViewController {
         configImageView()
         configTitleLabel()
         configDescriptionLabel()
-        configButton()
     }
 
     func configView() {
@@ -105,9 +101,5 @@ private extension OnboardingPageViewController {
         descriptionLabel.text = descriptionText
         descriptionLabel.textColor = .appWhite
         descriptionLabel.font = .roboto.regular.size(of: 14)
-    }
-
-    func configButton() {
-        button.setTitle(buttonText, for: .normal)
     }
 }

@@ -25,26 +25,22 @@ private extension OnboardingCoordinator {
             OnboardingPageViewController(
                 image: UIImage(resource: .onboardingPage1),
                 titleText: "Delicious Food",
-                descriptionText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                buttonText: "Next"
+                descriptionText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
             ),
             OnboardingPageViewController(
                 image: UIImage(resource: .onboardingPage2),
                 titleText: "Fast Shipping",
-                descriptionText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum rhoncus nulla.",
-                buttonText: "Next"
+                descriptionText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum rhoncus nulla."
             ),
             OnboardingPageViewController(
                 image: UIImage(resource: .onboardingPage3),
                 titleText: "Certificate Food",
-                descriptionText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultricies mauris a id.",
-                buttonText: "Next"
+                descriptionText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultricies mauris a id."
             ),
             OnboardingPageViewController(
                 image: UIImage(resource: .onboardingPage4),
                 titleText: "Payment Online",
-                descriptionText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui ultricies sit massa.",
-                buttonText: "Cool!"
+                descriptionText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui ultricies sit massa."
             )
         ])
 
