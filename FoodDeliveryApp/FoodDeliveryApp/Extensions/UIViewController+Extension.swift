@@ -8,7 +8,11 @@
 import UIKit
 
 extension UIViewController {
+    func addSubview(_ view: UIView) {
+        self.view.addSubview(view)
+    }
+
     func addSubviews(_ views: UIView...) {
-        views.forEach { view.addSubview($0) }
+        views.forEach(addSubview)
     }
 }

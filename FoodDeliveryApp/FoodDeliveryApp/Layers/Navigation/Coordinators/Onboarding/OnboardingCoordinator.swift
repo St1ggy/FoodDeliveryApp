@@ -9,12 +9,21 @@ import UIKit
 
 class OnboardingCoordinator: Coordinator {
     override func start() {
-        let vc = ViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        showOnboarding()
     }
 
     override func finish() {
         print("OnboardingCoordinator Finish")
+    }
+}
+
+private extension OnboardingCoordinator {
+    func showOnboarding() {
+        var pages = [UIViewController]()
+
+        let presenter = OnboardingViewPresenter(coordinator: self)
+        let viewController = OnboardingViewController(pages: pages, viewOutput: presenter)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 

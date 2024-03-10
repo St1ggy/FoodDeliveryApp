@@ -39,6 +39,8 @@
 		48ACF3362B9D215C0073BEEE /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF3352B9D215C0073BEEE /* ListCoordinator.swift */; };
 		48ACF3382B9D216C0073BEEE /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF3372B9D216C0073BEEE /* ProfileCoordinator.swift */; };
 		48ACF33A2B9D21970073BEEE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF3392B9D21970073BEEE /* TabBarController.swift */; };
+		48ACF33E2B9DC37B0073BEEE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF33D2B9DC37B0073BEEE /* OnboardingViewController.swift */; };
+		48ACF3402B9DC39F0073BEEE /* OnboardingViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF33F2B9DC39F0073BEEE /* OnboardingViewPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		48ACF3352B9D215C0073BEEE /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
 		48ACF3372B9D216C0073BEEE /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		48ACF3392B9D21970073BEEE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		48ACF33D2B9DC37B0073BEEE /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		48ACF33F2B9DC39F0073BEEE /* OnboardingViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,7 @@
 		48ACF3262B9C9DE30073BEEE /* Layers */ = {
 			isa = PBXGroup;
 			children = (
+				48ACF33B2B9DC3430073BEEE /* UI */,
 				48ACF3272B9C9DE60073BEEE /* Navigation */,
 			);
 			path = Layers;
@@ -196,15 +201,48 @@
 		48ACF32A2B9C9DF90073BEEE /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				48ACF3422B9DCC260073BEEE /* Onboarding */,
+				48ACF3412B9DCC0E0073BEEE /* Main */,
 				48ACF32B2B9C9E090073BEEE /* Coordinator.swift */,
 				48ACF32D2B9D19590073BEEE /* AppCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		48ACF33B2B9DC3430073BEEE /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				48ACF33C2B9DC36E0073BEEE /* Onboarding */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		48ACF33C2B9DC36E0073BEEE /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				48ACF33D2B9DC37B0073BEEE /* OnboardingViewController.swift */,
+				48ACF33F2B9DC39F0073BEEE /* OnboardingViewPresenter.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		48ACF3412B9DCC0E0073BEEE /* Main */ = {
+			isa = PBXGroup;
+			children = (
 				48ACF3312B9D20F50073BEEE /* HomeCoordinator.swift */,
 				48ACF3332B9D21400073BEEE /* OrderCoordinator.swift */,
-				48ACF32F2B9D1A300073BEEE /* OnboardingCoordinator.swift */,
 				48ACF3352B9D215C0073BEEE /* ListCoordinator.swift */,
 				48ACF3372B9D216C0073BEEE /* ProfileCoordinator.swift */,
 			);
-			path = Coordinators;
+			path = Main;
+			sourceTree = "<group>";
+		};
+		48ACF3422B9DCC260073BEEE /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				48ACF32F2B9D1A300073BEEE /* OnboardingCoordinator.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,7 +345,9 @@
 				48ACF3222B9C7B910073BEEE /* UIColor+Extension.swift in Sources */,
 				48ACF32E2B9D19590073BEEE /* AppCoordinator.swift in Sources */,
 				48ACF3382B9D216C0073BEEE /* ProfileCoordinator.swift in Sources */,
+				48ACF3402B9DC39F0073BEEE /* OnboardingViewPresenter.swift in Sources */,
 				487475092B9B60140062BE17 /* SceneDelegate.swift in Sources */,
+				48ACF33E2B9DC37B0073BEEE /* OnboardingViewController.swift in Sources */,
 				48ACF3202B9BCACC0073BEEE /* UIFont+Extension.swift in Sources */,
 				48ACF3342B9D21400073BEEE /* OrderCoordinator.swift in Sources */,
 				48ACF3302B9D1A300073BEEE /* OnboardingCoordinator.swift in Sources */,

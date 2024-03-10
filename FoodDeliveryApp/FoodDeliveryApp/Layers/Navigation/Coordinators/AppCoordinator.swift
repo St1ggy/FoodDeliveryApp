@@ -33,8 +33,7 @@ private extension AppCoordinator {
         onboardingCoordinator.start()
     }
 
-    func configCoordinator(
-        coordinator: Coordinator,
+    func createNavigationController(
         tabTitle: String,
         imageName: String,
         tag: Int
@@ -46,52 +45,36 @@ private extension AppCoordinator {
             tag: tag
         )
 
+        return navigationController
+    }
+
+    func configCoordinator(
+        _ coordinator: Coordinator,
+        navigationController: UINavigationController
+    ) {
         coordinator.navigationController = navigationController
         coordinator.finishDelegate = self
         coordinator.start()
 
         addChildCoordinator(coordinator)
-
-        return navigationController
     }
 
     func showMainFlow() {
         guard let navigationController = navigationController else { return }
 
-        let homeNavigationController = configCoordinator(
-            coordinator: HomeCoordinator(),
-            tabTitle: "Home",
-            imageName: "house",
-            tag: 0
-        )
-
-        let orderNavigationController = configCoordinator(
-            coordinator: OrderCoordinator(),
-            tabTitle: "Order",
-            imageName: "cart",
-            tag: 1
-        )
-
-        let listNavigationController = configCoordinator(
-            coordinator: ListCoordinator(),
-            tabTitle: "List",
-            imageName: "list.dash",
-            tag: 2
-        )
-
-        let profileNavigationController = configCoordinator(
-            coordinator: ProfileCoordinator(),
-            tabTitle: "Profile",
-            imageName: "person",
-            tag: 3
-        )
-
-        let tabBarControllers = [
-            homeNavigationController,
-            orderNavigationController,
-            listNavigationController,
-            profileNavigationController,
+        let configs: [(Coordinator, String, String)] = [
+            (HomeCoordinator(), "Home", "house"),
+            (OrderCoordinator(), "Order", "cart"),
+            (ListCoordinator(), "List", "list.dash"),
+            (ProfileCoordinator(), "Profile", "person"),
         ]
+
+        let tabBarControllers = configs.enumerated().map { tag, config -> UINavigationController in
+            let (coordinator, tabTitle, imageName) = config
+            let navigationController = createNavigationController(tabTitle: tabTitle, imageName: imageName, tag: tag)
+            configCoordinator(coordinator, navigationController: navigationController)
+            return navigationController
+        }
 
         let tabBarController = TabBarController(with: tabBarControllers)
         navigationController.pushViewController(tabBarController, animated: true)
