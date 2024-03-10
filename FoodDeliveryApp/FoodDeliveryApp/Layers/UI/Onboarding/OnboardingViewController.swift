@@ -37,7 +37,7 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = AppColors.accent
+        view.backgroundColor = .appAccent
 
         configPageViewController()
         configPageControl()
@@ -92,9 +92,11 @@ extension OnboardingViewController: UIPageViewControllerDataSource {
 // MARK: - UIPageViewControllerDelegate Delegate
 
 extension OnboardingViewController: UIPageViewControllerDelegate {
-    func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
-        if let index = pages.firstIndex(of: pendingViewControllers.first!) {
-            pageControl.currentPage = index
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if completed {
+            if let currentViewController = pageViewController.viewControllers?.first, let index = pages.firstIndex(of: currentViewController) {
+                pageControl.currentPage = index
+            }
         }
     }
 }
