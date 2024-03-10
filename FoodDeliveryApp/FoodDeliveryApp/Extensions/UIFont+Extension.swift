@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIFont {
-    enum Roboto {
+    enum roboto {
         enum black {
             static func size(of size: CGFloat) -> UIFont {
                 UIFont(name: Constants.Roboto.black, size: size)!
