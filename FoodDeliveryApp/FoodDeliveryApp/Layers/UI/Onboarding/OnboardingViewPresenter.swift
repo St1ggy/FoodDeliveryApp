@@ -21,6 +21,7 @@ class OnboardingViewPresenter: OnboardingViewOutput {
     }
 
     func finishOnboarding() {
+        UserStorageService.onboardingShown = true
         coordinator.finish()
     }
 }

@@ -41,6 +41,7 @@
 		48ACF33E2B9DC37B0073BEEE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF33D2B9DC37B0073BEEE /* OnboardingViewController.swift */; };
 		48ACF3402B9DC39F0073BEEE /* OnboardingViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF33F2B9DC39F0073BEEE /* OnboardingViewPresenter.swift */; };
 		48ACF3442B9DF3A40073BEEE /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF3432B9DF3A40073BEEE /* OnboardingPageViewController.swift */; };
+		48ACF3492B9E5EE00073BEEE /* UserStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF3482B9E5EE00073BEEE /* UserStorageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		48ACF33D2B9DC37B0073BEEE /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		48ACF33F2B9DC39F0073BEEE /* OnboardingViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewPresenter.swift; sourceTree = "<group>"; };
 		48ACF3432B9DF3A40073BEEE /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
+		48ACF3482B9E5EE00073BEEE /* UserStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 		48ACF3262B9C9DE30073BEEE /* Layers */ = {
 			isa = PBXGroup;
 			children = (
+				48ACF3472B9E5ED00073BEEE /* Services */,
 				48ACF33B2B9DC3430073BEEE /* UI */,
 				48ACF3272B9C9DE60073BEEE /* Navigation */,
 			);
@@ -243,6 +246,14 @@
 				48ACF32F2B9D1A300073BEEE /* OnboardingCoordinator.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		48ACF3472B9E5ED00073BEEE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				48ACF3482B9E5EE00073BEEE /* UserStorageService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,6 +360,7 @@
 				48ACF33E2B9DC37B0073BEEE /* OnboardingViewController.swift in Sources */,
 				48ACF3202B9BCACC0073BEEE /* UIFont+Extension.swift in Sources */,
 				48ACF3342B9D21400073BEEE /* OrderCoordinator.swift in Sources */,
+				48ACF3492B9E5EE00073BEEE /* UserStorageService.swift in Sources */,
 				48ACF3302B9D1A300073BEEE /* OnboardingCoordinator.swift in Sources */,
 				48ACF3442B9DF3A40073BEEE /* OnboardingPageViewController.swift in Sources */,
 				48ACF3322B9D20F50073BEEE /* HomeCoordinator.swift in Sources */,

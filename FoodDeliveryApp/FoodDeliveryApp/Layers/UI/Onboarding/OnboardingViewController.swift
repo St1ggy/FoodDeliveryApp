@@ -21,7 +21,7 @@ class OnboardingViewController: UIViewController {
                                                                navigationOrientation: .horizontal)
     private lazy var pageControl = UIPageControl()
     private lazy var button = UIButton()
-    weak var viewOutput: OnboardingViewOutput?
+    var viewOutput: OnboardingViewOutput!
 
     init(pages: [UIViewController] = [UIViewController](), viewOutput: OnboardingViewOutput? = nil) {
         super.init(nibName: nil, bundle: nil)
@@ -48,8 +48,9 @@ class OnboardingViewController: UIViewController {
 
 private extension OnboardingViewController {
     @objc func didTapButton() {
-        if pageControl.currentPage == pages.count - 1 {}
-        else {
+        if pageControl.currentPage == pages.count - 1 {
+            viewOutput?.finishOnboarding()
+        } else {
             let nextPageIndex = pageControl.currentPage + 1
             let nextPage = pages[nextPageIndex]
             pageViewController.setViewControllers([nextPage], direction: .forward, animated: true)
@@ -97,17 +98,18 @@ private extension OnboardingViewController {
     func configButton() {
         addSubview(button)
 
+        let size = 50.0
         button.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(30)
             $0.bottom.equalTo(pageControl.snp.top).offset(-36)
-            $0.height.equalTo(50)
+            $0.height.equalTo(size)
         }
 
         button.backgroundColor = .appGrey
         updateButtonText()
         button.setTitleColor(.appAccent, for: .normal)
         button.titleLabel?.font = .roboto.bold.size(of: 18)
-        button.layer.cornerRadius = 25
+        button.layer.cornerRadius = size / 2
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
     }
 
