@@ -41,7 +41,9 @@
 		48ACF33E2B9DC37B0073BEEE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF33D2B9DC37B0073BEEE /* OnboardingViewController.swift */; };
 		48ACF3402B9DC39F0073BEEE /* OnboardingViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF33F2B9DC39F0073BEEE /* OnboardingViewPresenter.swift */; };
 		48ACF3442B9DF3A40073BEEE /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF3432B9DF3A40073BEEE /* OnboardingPageViewController.swift */; };
-		48ACF3492B9E5EE00073BEEE /* UserStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF3482B9E5EE00073BEEE /* UserStorageService.swift */; };
+		48ACF3492B9E5EE00073BEEE /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF3482B9E5EE00073BEEE /* UserStorage.swift */; };
+		48ACF34C2B9E63460073BEEE /* MainFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF34B2B9E63460073BEEE /* MainFactory.swift */; };
+		48ACF34E2B9E69030073BEEE /* OnboardingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF34D2B9E69030073BEEE /* OnboardingFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,7 +81,9 @@
 		48ACF33D2B9DC37B0073BEEE /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		48ACF33F2B9DC39F0073BEEE /* OnboardingViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewPresenter.swift; sourceTree = "<group>"; };
 		48ACF3432B9DF3A40073BEEE /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
-		48ACF3482B9E5EE00073BEEE /* UserStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorageService.swift; sourceTree = "<group>"; };
+		48ACF3482B9E5EE00073BEEE /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
+		48ACF34B2B9E63460073BEEE /* MainFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFactory.swift; sourceTree = "<group>"; };
+		48ACF34D2B9E69030073BEEE /* OnboardingFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +218,7 @@
 		48ACF33B2B9DC3430073BEEE /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				48ACF34A2B9E63310073BEEE /* SceneFactory */,
 				48ACF33C2B9DC36E0073BEEE /* Onboarding */,
 			);
 			path = UI;
@@ -251,9 +256,18 @@
 		48ACF3472B9E5ED00073BEEE /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				48ACF3482B9E5EE00073BEEE /* UserStorageService.swift */,
+				48ACF3482B9E5EE00073BEEE /* UserStorage.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		48ACF34A2B9E63310073BEEE /* SceneFactory */ = {
+			isa = PBXGroup;
+			children = (
+				48ACF34B2B9E63460073BEEE /* MainFactory.swift */,
+				48ACF34D2B9E69030073BEEE /* OnboardingFactory.swift */,
+			);
+			path = SceneFactory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +364,7 @@
 				4874750B2B9B60140062BE17 /* ViewController.swift in Sources */,
 				487475072B9B60140062BE17 /* AppDelegate.swift in Sources */,
 				48ACF33A2B9D21970073BEEE /* TabBarController.swift in Sources */,
+				48ACF34E2B9E69030073BEEE /* OnboardingFactory.swift in Sources */,
 				48ACF3362B9D215C0073BEEE /* ListCoordinator.swift in Sources */,
 				48ACF3002B9BC7680073BEEE /* UIViewController+Extension.swift in Sources */,
 				48ACF3222B9C7B910073BEEE /* UIColor+Extension.swift in Sources */,
@@ -360,7 +375,8 @@
 				48ACF33E2B9DC37B0073BEEE /* OnboardingViewController.swift in Sources */,
 				48ACF3202B9BCACC0073BEEE /* UIFont+Extension.swift in Sources */,
 				48ACF3342B9D21400073BEEE /* OrderCoordinator.swift in Sources */,
-				48ACF3492B9E5EE00073BEEE /* UserStorageService.swift in Sources */,
+				48ACF3492B9E5EE00073BEEE /* UserStorage.swift in Sources */,
+				48ACF34C2B9E63460073BEEE /* MainFactory.swift in Sources */,
 				48ACF3302B9D1A300073BEEE /* OnboardingCoordinator.swift in Sources */,
 				48ACF3442B9DF3A40073BEEE /* OnboardingPageViewController.swift in Sources */,
 				48ACF3322B9D20F50073BEEE /* HomeCoordinator.swift in Sources */,
