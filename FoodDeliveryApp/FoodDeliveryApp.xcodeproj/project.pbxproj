@@ -44,6 +44,9 @@
 		48ACF3492B9E5EE00073BEEE /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF3482B9E5EE00073BEEE /* UserStorage.swift */; };
 		48ACF34C2B9E63460073BEEE /* MainFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF34B2B9E63460073BEEE /* MainFactory.swift */; };
 		48ACF34E2B9E69030073BEEE /* OnboardingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF34D2B9E69030073BEEE /* OnboardingFactory.swift */; };
+		48ACF3512B9F18750073BEEE /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF3502B9F18750073BEEE /* AuthorizationViewController.swift */; };
+		48ACF3562B9F18EE0073BEEE /* AuthorizationFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF3552B9F18EE0073BEEE /* AuthorizationFooterView.swift */; };
+		48ACF3592B9F28980073BEEE /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF3582B9F28980073BEEE /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +87,9 @@
 		48ACF3482B9E5EE00073BEEE /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
 		48ACF34B2B9E63460073BEEE /* MainFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFactory.swift; sourceTree = "<group>"; };
 		48ACF34D2B9E69030073BEEE /* OnboardingFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFactory.swift; sourceTree = "<group>"; };
+		48ACF3502B9F18750073BEEE /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
+		48ACF3552B9F18EE0073BEEE /* AuthorizationFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationFooterView.swift; sourceTree = "<group>"; };
+		48ACF3582B9F28980073BEEE /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				48ACF2FF2B9BC7680073BEEE /* UIViewController+Extension.swift */,
+				48ACF3582B9F28980073BEEE /* UIView+Extension.swift */,
 				48ACF31F2B9BCACC0073BEEE /* UIFont+Extension.swift */,
 				48ACF3212B9C7B910073BEEE /* UIColor+Extension.swift */,
 			);
@@ -218,6 +225,7 @@
 		48ACF33B2B9DC3430073BEEE /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				48ACF34F2B9F183D0073BEEE /* Authorization */,
 				48ACF34A2B9E63310073BEEE /* SceneFactory */,
 				48ACF33C2B9DC36E0073BEEE /* Onboarding */,
 			);
@@ -268,6 +276,39 @@
 				48ACF34D2B9E69030073BEEE /* OnboardingFactory.swift */,
 			);
 			path = SceneFactory;
+			sourceTree = "<group>";
+		};
+		48ACF34F2B9F183D0073BEEE /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				48ACF3542B9F18CF0073BEEE /* Presenters */,
+				48ACF3532B9F18CB0073BEEE /* Controllers */,
+				48ACF3522B9F18C70073BEEE /* Views */,
+				48ACF3502B9F18750073BEEE /* AuthorizationViewController.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		48ACF3522B9F18C70073BEEE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				48ACF3552B9F18EE0073BEEE /* AuthorizationFooterView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		48ACF3532B9F18CB0073BEEE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		48ACF3542B9F18CF0073BEEE /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,6 +401,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48ACF3512B9F18750073BEEE /* AuthorizationViewController.swift in Sources */,
 				48ACF32C2B9C9E090073BEEE /* Coordinator.swift in Sources */,
 				4874750B2B9B60140062BE17 /* ViewController.swift in Sources */,
 				487475072B9B60140062BE17 /* AppDelegate.swift in Sources */,
@@ -374,6 +416,8 @@
 				487475092B9B60140062BE17 /* SceneDelegate.swift in Sources */,
 				48ACF33E2B9DC37B0073BEEE /* OnboardingViewController.swift in Sources */,
 				48ACF3202B9BCACC0073BEEE /* UIFont+Extension.swift in Sources */,
+				48ACF3562B9F18EE0073BEEE /* AuthorizationFooterView.swift in Sources */,
+				48ACF3592B9F28980073BEEE /* UIView+Extension.swift in Sources */,
 				48ACF3342B9D21400073BEEE /* OrderCoordinator.swift in Sources */,
 				48ACF3492B9E5EE00073BEEE /* UserStorage.swift in Sources */,
 				48ACF34C2B9E63460073BEEE /* MainFactory.swift in Sources */,

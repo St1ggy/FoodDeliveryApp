@@ -9,9 +9,11 @@ import UIKit
 
 class AppCoordinator: Coordinator {
     override func start() {
-        UserStorage.onboardingShown
-            ? showMainFlow()
-            : showOnboardingFlow()
+//        UserStorage.onboardingShown
+//            ? showMainFlow()
+//            : showOnboardingFlow()
+        let authorizationViewController = AuthorizationViewController()
+        navigationController?.pushViewController(authorizationViewController, animated: true)
     }
 
     override func finish() {
