@@ -23,10 +23,10 @@ class OnboardingPageViewController: UIViewController {
 
     // MARK: - Init
 
-    init(image: UIImage, titleText: String, descriptionText: String) {
+    init(image: ImageResource, titleText: String, descriptionText: String) {
         super.init(nibName: nil, bundle: nil)
 
-        self.image = image
+        self.image = UIImage(resource: image)
         self.titleText = titleText
         self.descriptionText = descriptionText
     }
