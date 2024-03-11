@@ -47,6 +47,7 @@
 		48ACF3512B9F18750073BEEE /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF3502B9F18750073BEEE /* AuthorizationViewController.swift */; };
 		48ACF3562B9F18EE0073BEEE /* AuthorizationFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF3552B9F18EE0073BEEE /* AuthorizationFooterView.swift */; };
 		48ACF3592B9F28980073BEEE /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF3582B9F28980073BEEE /* UIView+Extension.swift */; };
+		48ACF3602B9F4F7D0073BEEE /* FDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACF35F2B9F4F7D0073BEEE /* FDButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		48ACF3502B9F18750073BEEE /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		48ACF3552B9F18EE0073BEEE /* AuthorizationFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationFooterView.swift; sourceTree = "<group>"; };
 		48ACF3582B9F28980073BEEE /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		48ACF35F2B9F4F7D0073BEEE /* FDButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FDButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,9 +227,9 @@
 		48ACF33B2B9DC3430073BEEE /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				48ACF34F2B9F183D0073BEEE /* Authorization */,
-				48ACF34A2B9E63310073BEEE /* SceneFactory */,
-				48ACF33C2B9DC36E0073BEEE /* Onboarding */,
+				48ACF35D2B9F49270073BEEE /* Views */,
+				48ACF35E2B9F494E0073BEEE /* Scenes */,
+				48ACF34A2B9E63310073BEEE /* Factories */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -269,13 +271,13 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		48ACF34A2B9E63310073BEEE /* SceneFactory */ = {
+		48ACF34A2B9E63310073BEEE /* Factories */ = {
 			isa = PBXGroup;
 			children = (
 				48ACF34B2B9E63460073BEEE /* MainFactory.swift */,
 				48ACF34D2B9E69030073BEEE /* OnboardingFactory.swift */,
 			);
-			path = SceneFactory;
+			path = Factories;
 			sourceTree = "<group>";
 		};
 		48ACF34F2B9F183D0073BEEE /* Authorization */ = {
@@ -309,6 +311,23 @@
 			children = (
 			);
 			path = Presenters;
+			sourceTree = "<group>";
+		};
+		48ACF35D2B9F49270073BEEE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				48ACF35F2B9F4F7D0073BEEE /* FDButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		48ACF35E2B9F494E0073BEEE /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				48ACF34F2B9F183D0073BEEE /* Authorization */,
+				48ACF33C2B9DC36E0073BEEE /* Onboarding */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,6 +427,7 @@
 				48ACF33A2B9D21970073BEEE /* TabBarController.swift in Sources */,
 				48ACF34E2B9E69030073BEEE /* OnboardingFactory.swift in Sources */,
 				48ACF3362B9D215C0073BEEE /* ListCoordinator.swift in Sources */,
+				48ACF3602B9F4F7D0073BEEE /* FDButton.swift in Sources */,
 				48ACF3002B9BC7680073BEEE /* UIViewController+Extension.swift in Sources */,
 				48ACF3222B9C7B910073BEEE /* UIColor+Extension.swift in Sources */,
 				48ACF32E2B9D19590073BEEE /* AppCoordinator.swift in Sources */,

@@ -19,12 +19,11 @@ class AuthorizationFooterView: UIView {
     private lazy var imageView = UIImageView()
     private lazy var buttonsContainerView = UIStackView()
 
-    weak var delegate: AuthorizationFooterDelegate?
+    var delegate: AuthorizationFooterDelegate
 
-    init(delegate: AuthorizationFooterDelegate? = nil) {
-        super.init(frame: .zero)
-
+    init(delegate: AuthorizationFooterDelegate) {
         self.delegate = delegate
+        super.init(frame: .zero)
 
         layoutUI()
     }
@@ -118,11 +117,11 @@ class AuthorizationFooterView: UIView {
     }
 
     @objc private func didTapFacebookButton() {
-        delegate?.didTapFacebookButton()
+        delegate.didTapFacebookButton()
     }
 
     @objc private func didTapGoogleButton() {
-        delegate?.didTapGoogleButton()
+        delegate.didTapGoogleButton()
     }
 }
 

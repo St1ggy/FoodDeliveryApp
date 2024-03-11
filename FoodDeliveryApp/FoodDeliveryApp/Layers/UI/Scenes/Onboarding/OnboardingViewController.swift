@@ -13,17 +13,17 @@ import UIKit
 class OnboardingViewController: UIViewController {
     // MARK: - Properties
 
-    private var pages = [UIViewController]()
+    private var pages = [OnboardingPageViewController]()
 
     // MARK: - Views
 
     private lazy var pageViewController = UIPageViewController(transitionStyle: .scroll,
                                                                navigationOrientation: .horizontal)
     private lazy var pageControl = UIPageControl()
-    private lazy var button = UIButton()
+    private lazy var button = FDButton(buttonType: .secondary)
     var viewOutput: OnboardingViewOutput!
 
-    init(pages: [UIViewController] = [UIViewController](), viewOutput: OnboardingViewOutput? = nil) {
+    init(pages: [OnboardingPageViewController] = [OnboardingPageViewController](), viewOutput: OnboardingViewOutput? = nil) {
         super.init(nibName: nil, bundle: nil)
 
         self.pages = pages
@@ -55,7 +55,7 @@ private extension OnboardingViewController {
             let nextPage = pages[nextPageIndex]
             pageViewController.setViewControllers([nextPage], direction: .forward, animated: true)
             pageControl.currentPage = nextPageIndex
-            updateButtonText(index: nextPageIndex)
+            updateButton(index: nextPageIndex)
         }
     }
 }
@@ -98,23 +98,19 @@ private extension OnboardingViewController {
     func configButton() {
         addSubview(button)
 
-        let size = 50.0
         button.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(30)
             $0.bottom.equalTo(pageControl.snp.top).offset(-36)
-            $0.height.equalTo(size)
+            $0.leading.trailing.equalToSuperview().inset(30)
         }
 
-        button.backgroundColor = .appGrey
-        updateButtonText()
-        button.setTitleColor(.appAccent, for: .normal)
-        button.titleLabel?.font = .roboto.bold.size(of: 18)
-        button.layer.cornerRadius = size / 2
+        updateButton()
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
     }
 
-    func updateButtonText(index: Int = 0) {
-        button.setTitle(index == pages.count - 1 ? "Get Started" : "Next", for: .normal)
+    func updateButton(index: Int = 0) {
+        let page = pages[index]
+        button.setTitle(page.buttonText)
+        button.setColorStyle(page.buttonType)
     }
 }
 
@@ -122,13 +118,13 @@ private extension OnboardingViewController {
 
 extension OnboardingViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let currentIndex = pages.firstIndex(of: viewController), currentIndex > 0 else { return nil }
+        guard let currentIndex = pages.firstIndex(of: viewController as! OnboardingPageViewController), currentIndex > 0 else { return nil }
 
         return pages[currentIndex - 1]
     }
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let currentIndex = pages.firstIndex(of: viewController), currentIndex < pages.count - 1 else { return nil }
+        guard let currentIndex = pages.firstIndex(of: viewController as! OnboardingPageViewController), currentIndex < pages.count - 1 else { return nil }
 
         return pages[currentIndex + 1]
     }
@@ -139,9 +135,9 @@ extension OnboardingViewController: UIPageViewControllerDataSource {
 extension OnboardingViewController: UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if completed {
-            if let currentViewController = pageViewController.viewControllers?.first, let index = pages.firstIndex(of: currentViewController) {
+            if let currentViewController = pageViewController.viewControllers?.first, let index = pages.firstIndex(of: currentViewController as! OnboardingPageViewController) {
                 pageControl.currentPage = index
-                updateButtonText(index: index)
+                updateButton(index: index)
             }
         }
     }

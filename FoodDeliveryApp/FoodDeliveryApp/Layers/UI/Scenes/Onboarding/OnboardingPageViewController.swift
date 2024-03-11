@@ -11,9 +11,11 @@ import UIKit
 class OnboardingPageViewController: UIViewController {
     // MARK: - Properties
 
-    var image: UIImage?
-    var titleText: String?
-    var descriptionText: String?
+    var image: UIImage
+    var titleText: String
+    var descriptionText: String
+    var buttonText: String
+    var buttonType: FDButtonType
 
     // MARK: - Views
 
@@ -23,12 +25,14 @@ class OnboardingPageViewController: UIViewController {
 
     // MARK: - Init
 
-    init(image: ImageResource, titleText: String, descriptionText: String) {
-        super.init(nibName: nil, bundle: nil)
-
+    init(image: ImageResource, titleText: String, descriptionText: String, buttonText: String, buttonType: FDButtonType) {
         self.image = UIImage(resource: image)
         self.titleText = titleText
         self.descriptionText = descriptionText
+        self.buttonText = buttonText
+        self.buttonType = buttonType
+
+        super.init(nibName: nil, bundle: nil)
     }
 
     @available(*, unavailable)
